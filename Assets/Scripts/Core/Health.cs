@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace RPG.Combat
+namespace RPG.Core
 {
     public class Health : MonoBehaviour
     {
         [SerializeField] float healthPoints = 100f;
-        bool isDead;
+        private bool isDead;
         public bool IsDead { get { return isDead; } }
 
 
@@ -22,11 +22,11 @@ namespace RPG.Combat
 
         private void Die()
         {
-            GetComponent<Animator>().SetTrigger("die");
-            GetComponent<Collider>().enabled = false;
-            GetComponent<CombatTarget>().enabled = false;
-            GetComponent<NavMeshAgent>().enabled = false;
+            if (isDead) return;
             isDead = true;
+            GetComponent<Animator>().SetTrigger("die");
+            GetComponent<ActionScheduler>().CancelCurrentAction();
+
         }
     }
 }

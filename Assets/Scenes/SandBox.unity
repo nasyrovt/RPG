@@ -894,6 +894,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5632339096060701532, guid: e3ed92c03fd901c419d658870b739f20, type: 3}
+      propertyPath: healthPoints
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6086401480211350555, guid: e3ed92c03fd901c419d658870b739f20, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1038,13 +1042,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4942175959485770078, guid: 62b529498892b2f40ad7f7342ee64049, type: 3}
+      propertyPath: healthPoints
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 6830563905413645849, guid: 62b529498892b2f40ad7f7342ee64049, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6830563905413645849, guid: 62b529498892b2f40ad7f7342ee64049, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 27.89
       objectReference: {fileID: 0}
     - target: {fileID: 6830563905413645849, guid: 62b529498892b2f40ad7f7342ee64049, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1052,7 +1060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6830563905413645849, guid: 62b529498892b2f40ad7f7342ee64049, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.89
       objectReference: {fileID: 0}
     - target: {fileID: 6830563905413645849, guid: 62b529498892b2f40ad7f7342ee64049, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1084,6 +1092,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6830563905413645853, guid: 62b529498892b2f40ad7f7342ee64049, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830563905413645853, guid: 62b529498892b2f40ad7f7342ee64049, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1805,6 +1817,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2508197537477745576, guid: e3ed92c03fd901c419d658870b739f20, type: 3}
+      propertyPath: weaponDamage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632339096060701532, guid: e3ed92c03fd901c419d658870b739f20, type: 3}
+      propertyPath: healthPoints
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6086401480211350555, guid: e3ed92c03fd901c419d658870b739f20, type: 3}
       propertyPath: m_RootOrder
       value: 2

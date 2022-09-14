@@ -14,7 +14,7 @@ namespace RPG.Combat
         private Health target;
         private Mover mover;
         private Animator animator;
-        private float timeSinceLastAttack;
+        private float timeSinceLastAttack = Mathf.Infinity;
 
 
         private void Awake()
@@ -28,7 +28,7 @@ namespace RPG.Combat
             timeSinceLastAttack += Time.deltaTime;
             if (target == null) return;
             if (target.IsDead) return;
-            if (!GetIsInRange())
+            if (!IsInRange())
                 mover.MoveTo(target.transform.position);
             else
             {
@@ -56,24 +56,27 @@ namespace RPG.Combat
             animator.SetTrigger("attack");
         }
 
-        public bool CanAttack()
+        public bool CanAttack(GameObject combatTarget)
         {
-            return target != null && !target.IsDead;
+            if (combatTarget == null) return false;
+            Health targetToTest = combatTarget.GetComponent<Health>();
+            return targetToTest != null && !targetToTest.IsDead;
         }
 
         //Animation event
         void Hit()
         {
-            if (!CanAttack()) return;
-            target.TakeDamage(weaponDamage);
+            if (target == null) return;
+            if (IsInRange())
+                target.TakeDamage(weaponDamage);
         }
 
-        private bool GetIsInRange()
+        private bool IsInRange()
         {
             return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
         }
 
-        public void Attack(CombatTarget combatTarget)
+        public void Attack(GameObject combatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
             target = combatTarget.GetComponent<Health>();

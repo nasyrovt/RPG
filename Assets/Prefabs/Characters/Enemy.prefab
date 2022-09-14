@@ -16,6 +16,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 64e2ef14a02f69a4b94edbee54ca296a, type: 2}
     - target: {fileID: 942969470, guid: b0bd6f437bd5cb24e8ad140b6acac426, type: 3}
+      propertyPath: m_Speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 942969470, guid: b0bd6f437bd5cb24e8ad140b6acac426, type: 3}
       propertyPath: m_Height
       value: 4.1
       objectReference: {fileID: 0}
@@ -75,6 +79,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7941866815157696240, guid: b0bd6f437bd5cb24e8ad140b6acac426, type: 3}
+      propertyPath: weaponDamage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941866815157696240, guid: b0bd6f437bd5cb24e8ad140b6acac426, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4123856757857461869, guid: b0bd6f437bd5cb24e8ad140b6acac426, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b0bd6f437bd5cb24e8ad140b6acac426, type: 3}
@@ -114,6 +126,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 388ddac08a81f14429663c0cca6616a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6670632290839646578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6086401480211350559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20acf862a9457c459e42e4b632349b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 10
 --- !u!1001 &8557311187254676208
 PrefabInstance:
   m_ObjectHideFlags: 0
