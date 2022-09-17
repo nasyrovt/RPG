@@ -8,6 +8,7 @@ namespace RPG.Combat
     public class Fighter : MonoBehaviour, IAction
     {
         [SerializeField] float weaponRange = 2f;
+        [SerializeField] float bossWeaponOffset = 2f;
         [SerializeField] float timeBetweenAttacks = 0.5f;
         [SerializeField] float weaponDamage = 5f;
 
@@ -29,7 +30,7 @@ namespace RPG.Combat
             if (target == null) return;
             if (target.IsDead) return;
             if (!IsInRange())
-                mover.MoveTo(target.transform.position);
+                mover.MoveTo(target.transform.position, 1f);
             else
             {
                 mover.Cancel();
@@ -71,9 +72,22 @@ namespace RPG.Combat
                 target.TakeDamage(weaponDamage);
         }
 
+        void BossHit()
+        {
+            if (target == null) return;
+            if (IsInBossRange())
+                target.TakeDamage(weaponDamage);
+        }
+
         private bool IsInRange()
         {
             return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
+        }
+
+        private bool IsInBossRange()
+        {
+            float distance = Vector3.Distance(transform.position, target.transform.position);
+            return distance < weaponRange + bossWeaponOffset && distance > weaponRange - bossWeaponOffset;
         }
 
         public void Attack(GameObject combatTarget)
@@ -86,6 +100,7 @@ namespace RPG.Combat
         {
             StopAttack();
             target = null;
+            mover.Cancel();
         }
 
         private void StopAttack()
